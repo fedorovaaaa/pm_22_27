@@ -8,12 +8,18 @@ import rename from "gulp-rename";
 import browserSync from "browser-sync";
 import * as sass from "sass";
 import gulpSass from "gulp-sass";
+import fileInclude from "gulp-file-include";
 
 const sassCompiler = gulpSass(sass);
-
 gulp.task("html", function () {
   return gulp
     .src("app/html/*.html")
+    .pipe(
+      fileInclude({
+        prefix: "@@",
+        basepath: "@file",
+      })
+    )
     .pipe(gulp.dest("dist"))
     .pipe(browserSync.stream());
 });
@@ -46,7 +52,7 @@ gulp.task("scripts", function () {
 
 gulp.task("imgs", function () {
   return gulp
-    .src("app/img/*.+(jpg|jpeg|png|gif)")
+    .src("app/img/*.+(jpg|jpeg|png|gif)", { encoding: false })
     .pipe(
       imagemin({
         progressive: true,
