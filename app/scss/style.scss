@@ -1,8 +1,13 @@
+$primary-color: #d50821;
+$grey-color: #444444;
+$lgrey-color: #f5f5f5;
+
 .body {
     width: 100%;
     width: 100%;
     background-color: #bebebe;
     font-family: "Lato", sans-serif;
+    color: $grey-color;
     line-height: 1;
 }
 
@@ -21,7 +26,7 @@
     left: 0;
     width: 28.8rem;
     height: 21.6rem;
-    background-color: #d50821;
+    background-color: $primary-color;
     z-index: -1;
 }
 
@@ -31,7 +36,7 @@
     left: 0;
     width: 28.8rem;
     height: 14.4rem;
-    background-color: #444444;;
+    background-color: $grey-color;
     z-index: -1;
 }
 
@@ -50,15 +55,14 @@
     display: flex;
     padding: 4.21rem 0 0 7.28rem;
 }
-.bi-person-lines-fill{
-    font-size: 2rem;
-}
-.bi-telephone-fill{
-    font-size: 2rem;
-}
+
+
+
 .icon-container {
+    font-size: 2rem;
     width: 2.1rem;
     height: 2.1rem;
+    margin-top: auto;
     margin-right: 1.7rem;
     justify-content: center;
     align-items: center;
@@ -68,7 +72,6 @@
     margin: 0;
     font-size: 1.9rem;
     text-transform: uppercase;
-    color: #444444;
     font-weight: 900;
     text-align: center;
 }
@@ -82,10 +85,10 @@
 }
 
 .info {
+    color: #ffffff;
     margin: 1.5rem 0;
 }
 .info .John {
-    color: #ffffff;
     font-size: 4rem;
     letter-spacing: -0.19px;
     font-weight: 400;
@@ -94,7 +97,6 @@
 }
 
 .info .Parker {
-    color: #ffffff;
     font-size: 4rem;
     letter-spacing: -0.03px;
     font-weight: 900;
@@ -103,7 +105,6 @@
 }
 
 .info p {
-    color: #ffffff;
     font-size: 1.25rem;
     letter-spacing: 0.19rem;
     font-weight: 400;
@@ -114,7 +115,7 @@
 .about {
     margin: 0.7rem 0;
     margin-right: 3.3rem;
-    border: 0.19rem solid #d50821;
+    border: 0.19rem solid $primary-color;
     height: 21rem;
     border-left: none;
 }
@@ -122,7 +123,7 @@
     height: 16.8rem;
     margin: 2rem 2.5rem;
     padding: 2.4rem 2.4rem;
-    border-left: 0.19rem solid #444444;
+    border-left: 0.19rem solid $grey-color;
 }
 
 
@@ -131,18 +132,16 @@
     //height: 302px;
     font-size: 1.25rem;
     line-height: 1.8rem;
-    color: #444444;
     font-weight: 400;
     text-align: justify;
     text-align-last: center;
 }
 .contact {
     margin-top: 1.5rem;
+    margin-right: 3.3rem;
 }
 /* Загальні стилі для контактного списку */
-.contact-list {
-    display: flex;
-}
+
 .list-center {
     margin-left: 4rem;
 }
@@ -155,8 +154,8 @@
 
 }
 .contact-list li {
-align-items: center;
-  margin-top: 2.2rem;
+  align-items: center;
+  margin-top: 2rem;
 }
 
 
@@ -165,17 +164,17 @@ align-items: center;
     display: inline-block;
     width: 0.5rem;
     height: 0.5rem;
-    background-color: #444444;
+    background-color: $grey-color;
     margin-right: 3.2rem;
 }
 
 /* Вертикальна лінія */
 .vertical-line {
     position: absolute;
-    left: 39.5rem;
+    left: 37.7rem;
     margin-top: 2rem;
     width: 0.03rem;
-    background-color: #444444;
+    background-color: $grey-color;
     height: 5.7rem;
 }
 .contact-list {
@@ -184,12 +183,12 @@ align-items: center;
 }
 /* Стилі для посилань */
 .contact-list a {
-    color: #444444;
+    color: $grey-color;
     text-decoration: none;
 }
 
 .contact-list a:hover {
-    color: red;
+    color: $primary-color;
     /* Колір при наведенні */
     text-decoration: underline;
     /* Підкреслення при наведенні */
@@ -199,9 +198,84 @@ align-items: center;
     margin-left: 3.6rem;
 }
 .main-content {
+    position: relative;
     display: flex;
+    justify-content: space-between;
+    padding-left: 7.25rem;
+    padding-right: 7.7rem;
+}
+
+.main-content .title {
+    margin-top: 2.3rem;
+    margin-bottom: 0;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    color: $primary-color;
+    font-weight: 900;
+}
+
+.horizontal-line {
+    margin: 0;
+    background-color: $grey-color;
+    height: 0.15rem;
+}
+.left-side{
+
 }
 
 .right-side {
+    text-align: right;
+}
+.educ {
+    display: inline-block;
+    justify-content: flex-end;  
 
+}
+
+.name-and-year {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+.year {
+    font-size: 0.9rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+.name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.specialty {
+    margin-top: 3.2rem;
+    margin-bottom: 0;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: $primary-color;
+    font-weight: 900;
+}
+
+.red-rectangle2, .red-rectangle3 {
+    position: absolute;
+    width: 3.5rem;
+    height: 100%;
+    background-color: $primary-color;
+    z-index: -1;
+}
+.red-rectangle2 {
+    left: 0;
+}
+.red-rectangle3 {
+    right: 0;
+}
+
+.trapezoid {
+    position: absolute;
+    width: 36.8rem;
+    height: 32.8rem;
+    background-color: #f5f5f5;;
+    clip-path: polygon(0% 0%, 80.5% 0%, 100% 100%, 0% 100%);
+    z-index: -1;
 }
