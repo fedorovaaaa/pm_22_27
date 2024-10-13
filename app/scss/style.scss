@@ -183,12 +183,9 @@ $lgrey-color: #f5f5f5;
 }
 
 .main-content {
-    gap: 12.5rem;
- //   position: relative;
     display: flex;
-    justify-content: center;
-    padding-left: 7.25rem;
-    padding-right: 7.7rem;
+    justify-content: space-between;
+    
 }
 
 .main-content .title {
@@ -199,110 +196,54 @@ $lgrey-color: #f5f5f5;
     color: $primary-color;
     font-weight: 900;
 }
-
 .main-content .name-info {
     margin-top: 1.3rem;
     margin-bottom: 0;
+} 
+.experience {
+    margin-left: 7.25rem;
 }
 
-.horizontal-line {
+.horizontal-line, .horizontal-line2 {
     margin: 0;
     background-color: $grey-color;
     height: 0.15rem;
 }
 
 .horizontal-line2 {
-    position: absolute;
-    margin: 0;
-    background-color: #6c6c6c; 
+    margin-top: 3rem;
     height: 0.5rem;
+    background-color: #6c6c6c;
 }
 
-
-.right-side {
-    text-align: right;
-}
-.skills, .education {
-    margin-top: 2.9rem;
-}
-
-.skills {
-    margin-left: 1.7rem;
-    margin-bottom: 5.2rem;
-}
-
-.skills-list {
-    margin-left: 0.7rem;
-}
-
-.skill {
-    margin-top: 2rem;
-    margin-bottom: 0rem;
-    margin-left: 1.7rem;
-    font-size: 1.1rem;
-    font-weight: 900;
-}
-
-.person-name {
+.white-squares {
     margin-top: 1.8rem;
-    margin-bottom: 0;
-    font-size: 1.1rem;
-    color: $primary-color;
-    text-transform: uppercase;
-    font-weight: 900;
+    margin-left: 0.6rem;
 }
 
-.person-adress {
-    margin-top: 1.1rem;
-    margin-right: 3.4rem;
-    margin-bottom: 0;
-    font-size: 0.9rem;
-    letter-spacing: 0.09rem;
-    font-weight: 700;
+.wsquare {
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: #ffffff;
+    z-index: 5;
 }
 
-.marker, .marker2 {
-    margin-top: auto;
-    width: 0.8rem;
-    height: 0.8rem;
+.round-rectangle {
+    margin-top: 1.8rem;
+    width: 1.75rem;
+    height: 28.3rem;
+    border-radius: 0.9rem;
     background-color: $grey-color;
-    border-radius: 0.4rem;
-}
-
-.marker {
-   
-    margin-left: 2.6rem;
-}
-
-.marker3 {
-    margin: auto 0;
-    margin-left: 1rem;
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 0.2rem;
-    background-color: $primary-color;
-}
-
-
-.educ {
-    display: inline-block;
-    justify-content: flex-end;  
-
 }
 
 .job {
-    margin-left: 2.2rem;
+margin-left: 2.2rem;
 }
-
-.degree {
-    margin-right: 2.2rem;
-}
-
-
 .name-and-year {
     margin-top: 0.5rem;
     margin-bottom: 0;
 }
+
 .year {
     font-size: 0.9rem;
     font-weight: 900;
@@ -324,67 +265,46 @@ $lgrey-color: #f5f5f5;
     font-weight: 900;
 }
 
-.red-rectangle2, .red-rectangle3 {
-    position: absolute;
-    width: 3.5rem;
-    
-    background-color: $primary-color;
-    z-index: -1;
-}
-.red-rectangle2 {
-    margin-left: -9rem;
-    height: 32.8rem;
-}
-.red-rectangle3 {
-    margin-left: 31.4rem;
-    height: 52.85rem;
-}
-
-.white-squares {
-    margin-top: 1.8rem;
-    margin-left: 0.6rem;
-}
-
-.wsquare {
-    width: 0.6rem;
-    height: 0.6rem;
-    background-color: #ffffff;
-    z-index: 5;
-}
-.round-rectangle {
-    margin-top: 1.8rem;
-    width: 1.75rem;
-    height: 28.3rem;
-    border-radius: 0.9rem;
+.marker {
+    margin-top: auto;
+    width: 0.8rem;
+    height: 0.8rem;
     background-color: $grey-color;
+    border-radius: 0.4rem;
+}
+
+.red-rectangle2 {
+
+    width: 3.5rem;
+ height: auto;
+    background-color: $primary-color;
+
 }
 
 .trapezoid {
     position: absolute;
-    margin-left: -8.9rem;
+    left: 0;
     width: 36.8rem;
     height: 32.8rem;
-    background-color: #f5f5f5;;
+    background-color: #f5f5f5;
+    ;
     clip-path: polygon(0% 0%, 80.5% 0%, 100% 100%, 0% 100%);
-    z-index: -3;
+    z-index: -1;
 }
-
-.hobbies {
-    margin-bottom: 2rem;
+.skills-list {
+margin-left: 0.6rem;
+margin-bottom: 5.3rem;
 }
-.hobbies p {
-    margin-top: 1.7rem;
-    margin-left: 2.6rem;
+.skill {
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+    margin-left: 1.7rem;
     font-size: 1.1rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-family: "Lato";
-    text-align: right;
+    font-weight: 900;
 }
-
-
-
 .progress-bar1 {
+  display: flex;
+  align-items: center;
     margin-top: 2rem;
     margin-left: 2.5rem;
     width: 9.2rem;
@@ -393,21 +313,22 @@ $lgrey-color: #f5f5f5;
     height: 0.4rem;
     border-radius: 0.2rem;
     overflow: visible;
-   
+
 }
- .progress1 {
-     width: 0;
-     /* Початкова ширина 0 для анімації */
-     position: relative;
-     align-items: center;
-     height: 100%;
-     /* Висота прогрес-індикатора */
-     background-color: $primary-color;
-     border-radius: 0.2rem;
-     overflow: visible;
-     transition: width 2s ease-in-out, background-color 0.5s ease;
-     /* Об'єднано transition */
- }
+
+.progress1 {
+    width: 0;
+    /* Початкова ширина 0 для анімації */
+    position: relative;
+    align-items: center;
+    height: 60%;
+    /* Висота прогрес-індикатора */
+    background-color: $primary-color;
+    border-radius: 0.2rem;
+    overflow: visible;
+    transition: width 2s ease-in-out, background-color 0.5s ease;
+    /* Об'єднано transition */
+}
 
 .progress1::after {
     content: "";
@@ -421,6 +342,59 @@ $lgrey-color: #f5f5f5;
     border-radius: 0;
 }
 
+.right-side {
+    text-align: end;
+}
+
+.references {
+    padding-right: 7.2rem;
+}
+.degree {
+    padding-right: 2.2rem;
+}
+
+.person-name {
+    margin-top: 1.8rem;
+    margin-right: 1.7rem ;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    color: $primary-color;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.person-adress {
+    margin-top: 1.1rem;
+    margin-right: 2.4rem;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.09rem;
+    font-weight: 700;
+}
+.marker2 {
+    margin: auto 0;
+    margin-left: 1rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 0.2rem;
+    background-color: $primary-color;
+}
+.hobbies {
+    margin-bottom: 3.5rem;
+}
+
+.hobbies p {
+   margin: 0;
+    margin-left: 2.6rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.hobby {
+    margin-top: 2rem;
+}
+
 .roll-block {
     max-height: 0;
     overflow: hidden;
@@ -430,4 +404,3 @@ $lgrey-color: #f5f5f5;
 .roll {
     cursor: pointer;
 }
-
