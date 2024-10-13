@@ -183,7 +183,7 @@ $lgrey-color: #f5f5f5;
 }
 
 .main-content {
-    gap: 200px;
+    gap: 12.5rem;
  //   position: relative;
     display: flex;
     justify-content: center;
@@ -341,14 +341,11 @@ $lgrey-color: #f5f5f5;
 }
 
 .white-squares {
-
-    position: absolute;
     margin-top: 1.8rem;
     margin-left: 0.6rem;
 }
 
 .wsquare {
-    display: inline-block;
     width: 0.6rem;
     height: 0.6rem;
     background-color: #ffffff;
@@ -433,3 +430,4 @@ $lgrey-color: #f5f5f5;
 .roll {
     cursor: pointer;
 }
+
