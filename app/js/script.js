@@ -42,3 +42,71 @@ function showOrHide(block) {
     block.style.maxHeight = "300vh";
   }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('http://localhost:5000/data')
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+            const hobbiesContainer = document.getElementById('hobbies');
+            const hobbiesHTML = data.hobbies.map(hobb => `
+                    <div class="d-flex ">
+                      <p>${hobb.name}</p>
+                      <span class="marker2"></span>
+                    </div>
+
+                `).join('');
+          hobbiesContainer.innerHTML = hobbiesHTML;
+          
+           const hobbyContainer = document.getElementById('hobby');
+            const hobbyHTML = data.hobby.map(hb => `
+                   <p>${hb.name}</p>
+                    <span class="marker2"></span>
+
+                `).join('');
+            hobbyContainer.innerHTML = hobbyHTML;
+  
+            
+            const skillsContainer = document.getElementById('skills');
+            const skillsHTML = data.skills.map(skill => `
+                    <div class="skill-box">
+                    <div class="d-flex">
+                      <span class="marker"></span>
+                      <p class="skill">${skill.name}</p>
+                    </div>
+                    <div class="progress-bar1">
+                      <div class="progress1" style="width: ${skill.progress}"></div>
+                    </div>
+                  </div>
+                `).join('');
+          
+          skillsContainer.innerHTML = skillsHTML;
+   
+          
+            const referencesContainer = document.getElementById('references');
+            const referencesHTML = data.references.map(ref => `
+                    <div class="person">
+                <div class="d-flex justify-content-end">
+                  <h3 class="person-name">${ref.name}</h3>
+                  <span class="marker"></span>
+                </div>
+
+                <p class="person-adress">
+                  ${ref.address}
+                </p>
+              </div>
+                `).join('');
+          referencesContainer.innerHTML = referencesHTML;
+          
+          const trapezoid = document.querySelector('.trapezoid');
+            if (trapezoid) {
+                trapezoid.style.height = '32.9rem'; // нова висота для трапеції
+          }
+
+          const rd3 = document.querySelector('.red-rectangle3');
+            if (rd3) {
+                rd3.style.height = '32.9rem'; // нова висота для прямокутника
+          }
+        })
+        .catch(error => console.error('Error fetching JSON :) :', error));
+});

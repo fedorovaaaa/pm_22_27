@@ -24,6 +24,8 @@
     "sass": "^1.78.0"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.1"
   }
 }
