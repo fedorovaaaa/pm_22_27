@@ -45,66 +45,71 @@ function animateShapes() {
 }
 
 // Відображення даних після завантаження з сервера
-document.addEventListener('DOMContentLoaded', function() {
-    fetch('http://localhost:5000/data')
-        .then(response => response.json())
-        .then(data => {
-          console.log(data);
-
-          // Робота з секцією 'hobbies'
-          const hobbiesContainer = document.getElementById('hobbies');
-          const hobbiesHTML = data.hobbies.map(hobb => `
-              <div class="d-flex ">
+document.addEventListener('DOMContentLoaded', async function() {
+    try {
+        const response = await fetch('http://localhost:8080/data'); // Запит даних з сервера
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        
+        // Робота з секцією 'hobbies'
+        const hobbiesContainer = document.getElementById('hobbies');
+        const hobbiesHTML = data.hobbies.map(hobb => `
+            <div class="d-flex ">
                 <p>${hobb.name}</p>
                 <span class="marker2"></span>
-              </div>
-          `).join('');
-          hobbiesContainer.innerHTML = hobbiesHTML;
+            </div>
+        `).join('');
+        hobbiesContainer.innerHTML = hobbiesHTML;
 
-          // Робота з секцією 'hobby'
-          const hobbyContainer = document.getElementById('hobby');
-          const hobbyHTML = data.hobby.map(hb => `
-              <p>${hb.name}</p>
-              <span class="marker2"></span>
-          `).join('');
-          hobbyContainer.innerHTML = hobbyHTML;
+        // Робота з секцією 'hobby'
+        const hobbyContainer = document.getElementById('hobby');
+        const hobbyHTML = data.hobby.map(hb => `
+            <p>${hb.name}</p>
+            <span class="marker2"></span>
+        `).join('');
+        hobbyContainer.innerHTML = hobbyHTML;
 
-          // Робота з секцією 'skills'
-          const skillsContainer = document.getElementById('skills');
-          const skillsHTML = data.skills.map(skill => `
-              <div class="skill-box">
+        // Робота з секцією 'skills'
+        const skillsContainer = document.getElementById('skills');
+        const skillsHTML = data.skills.map(skill => `
+            <div class="skill-box">
                 <div class="d-flex">
-                  <span class="marker"></span>
-                  <p class="skill">${skill.name}</p>
+                    <span class="marker"></span>
+                    <p class="skill">${skill.name}</p>
                 </div>
                 <div class="progress-bar1">
-                  <div class="progress1" style="width: ${skill.progress}"></div>
+                    <div class="progress1" style="width: ${skill.progress}"></div>
                 </div>
-              </div>
-          `).join('');
-          skillsContainer.innerHTML = skillsHTML;
+            </div>
+        `).join('');
+        skillsContainer.innerHTML = skillsHTML;
 
-          // Робота з секцією 'references'
-          const referencesContainer = document.getElementById('references');
-          const referencesHTML = data.references.map(ref => `
-              <div class="person">
+        // Робота з секцією 'references'
+        const referencesContainer = document.getElementById('references');
+        const referencesHTML = data.references.map(ref => `
+            <div class="person">
                 <div class="d-flex justify-content-end">
-                  <h3 class="person-name">${ref.name}</h3>
-                  <span class="marker"></span>
+                    <h3 class="person-name">${ref.name}</h3>
+                    <span class="marker"></span>
                 </div>
                 <p class="person-adress">${ref.address}</p>
-              </div>
-          `).join('');
-          referencesContainer.innerHTML = referencesHTML;
+            </div>
+        `).join('');
+        referencesContainer.innerHTML = referencesHTML;
 
-          // Після завантаження даних ініціюємо анімації
-          setProgressWidth();
-          animateSkillBoxVisibility();
-          animateProgressBars();
-          animateShapes();
-        })
-        .catch(error => console.error('Error fetching JSON :) :', error));
+        // Після завантаження даних ініціюємо анімації
+        setProgressWidth();
+        animateSkillBoxVisibility();
+        animateProgressBars();
+        animateShapes();
+
+    } catch (error) {
+        console.error('Error fetching JSON:', error);
+    }
 });
+
 
 // Анімація показу/приховування для кнопок roll
 const btnRoll = document.getElementsByClassName("roll");
